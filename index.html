@@ -1,405 +1,389 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регламент и План онбординга Support</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-light: #eff6ff;
+      --border: #e2e8f0;
+      --accent: #10b981;
+      --warning-bg: #fffbeb;
+      --warning-border: #fef3c7;
+      --warning-text: #b45309;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--card-bg);
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 26px;
+      color: var(--primary);
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      background: var(--bg);
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    .meta-item label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .meta-item input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .rules-card {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+    }
+
+    .rules-card h3 { margin: 0 0 12px 0; font-size: 18px; color: var(--primary); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 32px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      color: var(--text);
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .checklist-item.done span {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .priority-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .p1 { background: #fee2e2; color: #991b1b; }
+    .p2 { background: #fef3c7; color: #92400e; }
+    .p3 { background: #e0e7ff; color: #3730a3; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-top: 12px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    th { background: #f1f5f9; font-weight: 600; color: var(--text-muted); }
+
+    td[contenteditable="true"] {
+      background: #fafafa;
+    }
+
+    td[contenteditable="true"]:focus {
+      outline: 2px solid var(--primary);
+      background: #fff;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ru"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Регламент и План онбординга Support&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg: #f8fafc;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--card-bg: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text: #0f172a;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text-muted: #64748b;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--primary: #2563eb;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--primary-light: #eff6ff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--border: #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--accent: #10b981;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--warning-bg: #fffbeb;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--warning-border: #fef3c7;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--warning-text: #b45309;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--bg);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 24px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 960px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 1px 3px rgba(0,0,0,0.05);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 0 8px 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 26px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.subtitle {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.meta-grid {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.meta-item label {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.meta-item input {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 1px 3px rgba(0,0,0,0.02);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.rules-card {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--primary-light);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-left: 4px solid var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.rules-card h3 { margin: 0 0 12px 0; font-size: 18px; color: var(--primary); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.grid-2 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 32px 0 16px 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 2px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.checklist-item {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: flex-start;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.checklist-item input[type="checkbox"] {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 3px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>accent-color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.checklist-item.done span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: line-through;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.priority-badge {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 2px 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.p1 { background: #fee2e2; color: #991b1b; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.p2 { background: #fef3c7; color: #92400e; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.p3 { background: #e0e7ff; color: #3730a3; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>table {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-collapse: collapse;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>th, td {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: left;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>th { background: #f1f5f9; font-weight: 600; color: var(--text-muted); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>td[contenteditable="true"] {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #fafafa;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>td[contenteditable="true"]:focus {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>outline: 2px solid var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.note {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="container"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;📘 Регламент &amp; План онбординга Support&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="subtitle"&gt;База знаний, разделение обязанностей и пошаговая программа стажировки&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="meta-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="meta-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;Стажёр&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="trainee-name" placeholder="ФИО стажёра"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="meta-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;Дата старта&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="date" id="start-date"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="meta-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;Команда наставников (2/2)&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="mentors-list" placeholder="Имена менторов"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- РАЗДЕЛ 1: РЕГЛАМЕНТ РАБОТЫ --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;📌 Раздел 1. Регламент и Разграничение полномочий&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="grid-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3 style="margin-top:0; color: var(--accent);"&gt;✅ Наша зона (Саппорт: ТГ + Веб)&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;b&gt;Общение в Telegram:&lt;/b&gt; Приём всех входящих обращений, помощь клиентам, выдерживание Tone of Voice.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;b&gt;Работа с аккаунтами в Вебе:&lt;/b&gt; Сброс и выдача паролей, изменение логинов, отключение/включение аккаунтов.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;b&gt;Управление сделками:&lt;/b&gt; Перенаправление сделок по запросу клиента в Веб-панели.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;b&gt;Аналитика таймеров:&lt;/b&gt; Проверка задержек в обработке сделок, выявление причин зависания.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3 style="margin-top:0; color: #e11d48;"&gt;🛑 Передаётся в Slack (Смежные отделы)&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;b&gt;Технический чат (Тех. отдел):&lt;/b&gt; Системные баги Веб-панели, «упавший» веб, ошибки сервера, не сохраняются данные.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;b&gt;Смежные отделы:&lt;/b&gt; Финансовые вопросы, договоры, индивидуальные доработки функционала.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;b&gt;Правило тикета в Slack:&lt;/b&gt; Передавать кейс только с приложенным &lt;code&gt;ID клиента&lt;/code&gt;, скрином ошибки из Веба и подробным описанием.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- РАЗДЕЛ 2: ТАЙМ-МЕНЕДЖМЕНТ --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card rules-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;⏱ Раздел 2. Тайм-менеджмент и Работа с большим потоком чатов&lt;/h3&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;b&gt;1. Правило приоритетизации (Метод 1-2-3):&lt;/b&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;span class="priority-badge p1"&gt;Приоритет 1&lt;/span&gt; &lt;b&gt;Критические сбои:&lt;/b&gt; Клиент не может войти, сбой сервиса. &lt;i&gt;(Делаем в первую очередь)&lt;/i&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;span class="priority-badge p2"&gt;Приоритет 2&lt;/span&gt; &lt;b&gt;Быстрые операции:&lt;/b&gt; Пароли, логины, перенаправление сделок, отключения. &lt;i&gt;(Делаем во 2-ю очередь, занимает 1–2 минуты)&lt;/i&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;span class="priority-badge p3"&gt;Приоритет 3&lt;/span&gt; &lt;b&gt;Аналитика:&lt;/b&gt; Разбор зависших таймеров, поиск причин задержек. &lt;i&gt;(Берём после разбора П1 и П2)&lt;/i&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;b&gt;2. Правило 3 минут:&lt;/b&gt; Если при работе над диалогом ты завис дольше, чем на 3 минуты, и не знаешь ответа — не тупи. Задай вопрос ментору или напиши в тех. чат Slack.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;b&gt;3. Контроль чатов:&lt;/b&gt; Используй папки в Telegram (&lt;i&gt;«В работе»&lt;/i&gt;, &lt;i&gt;«Ждем Slack»&lt;/i&gt;), чтобы открытые обращения не терялись.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- РАЗДЕЛ 3: ЧЕК-ЛИСТ ОБУЧЕНИЯ --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;🗓 Раздел 3. Программа обучения (2 недели)&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3 style="margin-top:0;"&gt;НЕДЕЛЯ 1: База, Связка «ТГ + Веб» и Тайм-менеджмент&lt;/h3&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-bottom: 16px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;День 1: Доступы и Карта инструментов&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Получены доступы в Telegram, Веб-панель и Slack.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Изучены каналы Slack (тех. чат, внутренний чат, соседние отделы).&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Усвоен сквозной процесс: Запрос ТГ → Действие в Вебе → Ответ в ТГ.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-bottom: 16px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;День 2: Базовые действия (ТГ + Веб)&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Отработан сброс/выдача паролей и отключение аккаунтов в Вебе.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Отработан процесс направления сделок в Вебе.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Практика на демке: Ментор делает, стажёр проговаривает шаги вслух.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-bottom: 16px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;День 3: Таймеры сделок и Тайм-менеджмент&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Освоен поиск задержек и проверка таймеров в Веб-панели.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Освоен метод приоритетизации чатов (1-2-3).&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Настроены папки в Telegram для контроля активных диалогов.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-bottom: 16px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;День 4: Работа со Slack и Ошибками&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Изучены границы: что решаем сами, а что уходит в Slack.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Закреплён стандарт тикета в Slack (ID клиента + скрин + суть).&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;День 5: Переход в режим «Driver» (За штурвалом)&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Стажёр шэрит экран: сам работает в ТГ и Вебе под присмотром ментора.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Проведён срез знаний Недели 1 (5 случайных вопросов от ментора).&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3 style="margin-top:0;"&gt;НЕДЕЛЯ 2: Практика, Параллельные чаты и Самостоятельность&lt;/h3&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-bottom: 16px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;Дни 6–7: Работа с параллельным потоком&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Ведение 2–3 чатов одновременно без потери контроля и забытых веток.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Соблюдение «Правила 3 минут» при задержках в решении.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-bottom: 16px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;Дни 8–9: Наработка скорости и сложные кейсы&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Самостоятельный контроль таймеров сделок без напоминаний.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Самостоятельная отработка сложных ситуаций и багов через Slack.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;День 10: Финальная проверочная смена (Зачёт)&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Успешное прохождение тестовой смены (1-2 часа полной самостоятельности).&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="checklist-item"&gt;&lt;input type="checkbox"&gt; &lt;span&gt;Получен допуск к самостоятельным сменaм.&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- РАЗДЕЛ 4: ЖУРНАЛ ПЕРЕДАЧИ СМЕНЫ --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;🔄 Раздел 4. Журнал передачи смены 2/2 (Handover)&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="note"&gt;Заполняйте таблицу в конце каждой смены. Все данные автоматически сохраняются!&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th style="width: 10%;"&gt;Дата&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th style="width: 12%;"&gt;Сдаёт&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th style="width: 12%;"&gt;Принимает&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th style="width: 18%;"&gt;Что прошли&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th style="width: 24%;"&gt;Статус (ТГ + Веб)&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th style="width: 24%;"&gt;Тайм-менеджмент&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;tbody id="handover-body"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;10.09&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;Алексей&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;Иван&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;День 2&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;Пароли делает быстро, путает кнопки отключения.&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;Зависает при открытии 2-х чатов одновременно.&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;11.09&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;Иван&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;Сергей&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;День 3&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;Таймеры понял, научился находить задержки.&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;Забывает про чаты, где ждём Slack. Напомнить про папки!&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;--.--&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;...&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;...&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;...&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;...&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;td contenteditable="true"&gt;...&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/table&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Зачеркивание чекбоксов</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.checklist-item input').forEach((checkbox, index) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Восстановление состояния из localStorage</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const savedState = localStorage.getItem('chk_' + index);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (savedState === 'true') {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>checkbox.checked = true;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>checkbox.closest('.checklist-item').classList.add('done');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>checkbox.addEventListener('change', (e) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const item = e.target.closest('.checklist-item');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>item.classList.toggle('done', e.target.checked);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>localStorage.setItem('chk_' + index, e.target.checked);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Автосохранение текстовых полей шапки</p>
-<p class="p1"><span class="Apple-converted-space">  </span>['trainee-name', 'start-date', 'mentors-list'].forEach(id =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const el = document.getElementById(id);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (localStorage.getItem(id)) el.value = localStorage.getItem(id);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>el.addEventListener('input', () =&gt; localStorage.setItem(id, el.value));</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Автосохранение таблицы передачи смены</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const tableBody = document.getElementById('handover-body');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if (localStorage.getItem('table_data')) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>tableBody.innerHTML = localStorage.getItem('table_data');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>tableBody.addEventListener('input', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>localStorage.setItem('table_data', tableBody.innerHTML);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<div class="container">
+
+  <header>
+    <h1>📘 Регламент & План онбординга Support</h1>
+    <div class="subtitle">База знаний, разделение обязанностей и пошаговая программа стажировки</div>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <label>Стажёр</label>
+        <input type="text" id="trainee-name" placeholder="ФИО стажёра">
+      </div>
+      <div class="meta-item">
+        <label>Дата старта</label>
+        <input type="date" id="start-date">
+      </div>
+      <div class="meta-item">
+        <label>Команда наставников (2/2)</label>
+        <input type="text" id="mentors-list" placeholder="Имена менторов">
+      </div>
+    </div>
+  </header>
+
+  <!-- РАЗДЕЛ 1: РЕГЛАМЕНТ РАБОТЫ -->
+  <div class="section-title">📌 Раздел 1. Регламент и Разграничение полномочий</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="margin-top:0; color: var(--accent);">✅ Наша зона (Саппорт: ТГ + Веб)</h3>
+      <ul>
+        <li><b>Общение в Telegram:</b> Приём всех входящих обращений, помощь клиентам, выдерживание Tone of Voice.</li>
+        <li><b>Работа с аккаунтами в Вебе:</b> Сброс и выдача паролей, изменение логинов, отключение/включение аккаунтов.</li>
+        <li><b>Управление сделками:</b> Перенаправление сделок по запросу клиента в Веб-панели.</li>
+        <li><b>Аналитика таймеров:</b> Проверка задержек в обработке сделок, выявление причин зависания.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0; color: #e11d48;">🛑 Передаётся в Slack (Смежные отделы)</h3>
+      <ul>
+        <li><b>Технический чат (Тех. отдел):</b> Системные баги Веб-панели, «упавший» веб, ошибки сервера, не сохраняются данные.</li>
+        <li><b>Смежные отделы:</b> Финансовые вопросы, договоры, индивидуальные доработки функционала.</li>
+        <li><b>Правило тикета в Slack:</b> Передавать кейс только с приложенным <code>ID клиента</code>, скрином ошибки из Веба и подробным описанием.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 2: ТАЙМ-МЕНЕДЖМЕНТ -->
+  <div class="card rules-card">
+    <h3>⏱ Раздел 2. Тайм-менеджмент и Работа с большим потоком чатов</h3>
+    
+    <p><b>1. Правило приоритетизации (Метод 1-2-3):</b></p>
+    <ul>
+      <li><span class="priority-badge p1">Приоритет 1</span> <b>Критические сбои:</b> Клиент не может войти, сбой сервиса. <i>(Делаем в первую очередь)</i></li>
+      <li><span class="priority-badge p2">Приоритет 2</span> <b>Быстрые операции:</b> Пароли, логины, перенаправление сделок, отключения. <i>(Делаем во 2-ю очередь, занимает 1–2 минуты)</i></li>
+      <li><span class="priority-badge p3">Приоритет 3</span> <b>Аналитика:</b> Разбор зависших таймеров, поиск причин задержек. <i>(Берём после разбора П1 и П2)</i></li>
+    </ul>
+
+    <p><b>2. Правило 3 минут:</b> Если при работе над диалогом ты завис дольше, чем на 3 минуты, и не знаешь ответа — не тупи. Задай вопрос ментору или напиши в тех. чат Slack.</p>
+    <p><b>3. Контроль чатов:</b> Используй папки в Telegram (<i>«В работе»</i>, <i>«Ждем Slack»</i>), чтобы открытые обращения не терялись.</p>
+  </div>
+
+  <!-- РАЗДЕЛ 3: ЧЕК-ЛИСТ ОБУЧЕНИЯ -->
+  <div class="section-title">🗓 Раздел 3. Программа обучения (2 недели)</div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">НЕДЕЛЯ 1: База, Связка «ТГ + Веб» и Тайм-менеджмент</h3>
+    
+    <div style="margin-bottom: 16px;">
+      <b>День 1: Доступы и Карта инструментов</b>
+      <label class="checklist-item"><input type="checkbox"> <span>Получены доступы в Telegram, Веб-панель и Slack.</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Изучены каналы Slack (тех. чат, внутренний чат, соседние отделы).</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Усвоен сквозной процесс: Запрос ТГ → Действие в Вебе → Ответ в ТГ.</span></label>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <b>День 2: Базовые действия (ТГ + Веб)</b>
+      <label class="checklist-item"><input type="checkbox"> <span>Отработан сброс/выдача паролей и отключение аккаунтов в Вебе.</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Отработан процесс направления сделок в Вебе.</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Практика на демке: Ментор делает, стажёр проговаривает шаги вслух.</span></label>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <b>День 3: Таймеры сделок и Тайм-менеджмент</b>
+      <label class="checklist-item"><input type="checkbox"> <span>Освоен поиск задержек и проверка таймеров в Веб-панели.</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Освоен метод приоритетизации чатов (1-2-3).</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Настроены папки в Telegram для контроля активных диалогов.</span></label>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <b>День 4: Работа со Slack и Ошибками</b>
+      <label class="checklist-item"><input type="checkbox"> <span>Изучены границы: что решаем сами, а что уходит в Slack.</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Закреплён стандарт тикета в Slack (ID клиента + скрин + суть).</span></label>
+    </div>
+
+    <div>
+      <b>День 5: Переход в режим «Driver» (За штурвалом)</b>
+      <label class="checklist-item"><input type="checkbox"> <span>Стажёр шэрит экран: сам работает в ТГ и Вебе под присмотром ментора.</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Проведён срез знаний Недели 1 (5 случайных вопросов от ментора).</span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">НЕДЕЛЯ 2: Практика, Параллельные чаты и Самостоятельность</h3>
+
+    <div style="margin-bottom: 16px;">
+      <b>Дни 6–7: Работа с параллельным потоком</b>
+      <label class="checklist-item"><input type="checkbox"> <span>Ведение 2–3 чатов одновременно без потери контроля и забытых веток.</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Соблюдение «Правила 3 минут» при задержках в решении.</span></label>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <b>Дни 8–9: Наработка скорости и сложные кейсы</b>
+      <label class="checklist-item"><input type="checkbox"> <span>Самостоятельный контроль таймеров сделок без напоминаний.</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Самостоятельная отработка сложных ситуаций и багов через Slack.</span></label>
+    </div>
+
+    <div>
+      <b>День 10: Финальная проверочная смена (Зачёт)</b>
+      <label class="checklist-item"><input type="checkbox"> <span>Успешное прохождение тестовой смены (1-2 часа полной самостоятельности).</span></label>
+      <label class="checklist-item"><input type="checkbox"> <span>Получен допуск к самостоятельным сменaм.</span></label>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 4: ЖУРНАЛ ПЕРЕДАЧИ СМЕНЫ -->
+  <div class="section-title">🔄 Раздел 4. Журнал передачи смены 2/2 (Handover)</div>
+  <div class="note">Заполняйте таблицу в конце каждой смены. Все данные автоматически сохраняются!</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 10%;">Дата</th>
+        <th style="width: 12%;">Сдаёт</th>
+        <th style="width: 12%;">Принимает</th>
+        <th style="width: 18%;">Что прошли</th>
+        <th style="width: 24%;">Статус (ТГ + Веб)</th>
+        <th style="width: 24%;">Тайм-менеджмент</th>
+      </tr>
+    </thead>
+    <tbody id="handover-body">
+      <tr>
+        <td contenteditable="true">10.09</td>
+        <td contenteditable="true">Алексей</td>
+        <td contenteditable="true">Иван</td>
+        <td contenteditable="true">День 2</td>
+        <td contenteditable="true">Пароли делает быстро, путает кнопки отключения.</td>
+        <td contenteditable="true">Зависает при открытии 2-х чатов одновременно.</td>
+      </tr>
+      <tr>
+        <td contenteditable="true">11.09</td>
+        <td contenteditable="true">Иван</td>
+        <td contenteditable="true">Сергей</td>
+        <td contenteditable="true">День 3</td>
+        <td contenteditable="true">Таймеры понял, научился находить задержки.</td>
+        <td contenteditable="true">Забывает про чаты, где ждём Slack. Напомнить про папки!</td>
+      </tr>
+      <tr>
+        <td contenteditable="true">--.--</td>
+        <td contenteditable="true">...</td>
+        <td contenteditable="true">...</td>
+        <td contenteditable="true">...</td>
+        <td contenteditable="true">...</td>
+        <td contenteditable="true">...</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script>
+  // Зачеркивание чекбоксов
+  document.querySelectorAll('.checklist-item input').forEach((checkbox, index) => {
+    // Восстановление состояния из localStorage
+    const savedState = localStorage.getItem('chk_' + index);
+    if (savedState === 'true') {
+      checkbox.checked = true;
+      checkbox.closest('.checklist-item').classList.add('done');
+    }
+
+    checkbox.addEventListener('change', (e) => {
+      const item = e.target.closest('.checklist-item');
+      item.classList.toggle('done', e.target.checked);
+      localStorage.setItem('chk_' + index, e.target.checked);
+    });
+  });
+
+  // Автосохранение текстовых полей шапки
+  ['trainee-name', 'start-date', 'mentors-list'].forEach(id => {
+    const el = document.getElementById(id);
+    if (localStorage.getItem(id)) el.value = localStorage.getItem(id);
+    el.addEventListener('input', () => localStorage.setItem(id, el.value));
+  });
+
+  // Автосохранение таблицы передачи смены
+  const tableBody = document.getElementById('handover-body');
+  if (localStorage.getItem('table_data')) {
+    tableBody.innerHTML = localStorage.getItem('table_data');
+  }
+
+  tableBody.addEventListener('input', () => {
+    localStorage.setItem('table_data', tableBody.innerHTML);
+  });
+</script>
+
 </body>
 </html>
