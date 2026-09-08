@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08080b" />
+  <title>Онбординг поддержки — От новичка до готовности</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>САППОРТ<span class="brand-pink">/</span>ОНБОРДИНГ</span>
+    </div>
+    <nav>
+      <a href="#journey">Путь обучения</a>
+      <a href="#knowledge">База знаний</a>
+      <button class="ghost-btn" id="mentorBtn">Режим ментора</button>
+    </nav>
+  </header>
+
+  <aside class="progress-rail" aria-label="Прогресс обучения">
+    <div class="rail-label">ГОТОВНОСТЬ</div>
+    <div class="rail-track">
+      <div class="rail-fill" id="railFill"></div>
+      <div class="rail-dot"></div>
+    </div>
+    <div class="rail-percent" id="progressPercent">0%</div>
+  </aside>
+
+  <main>
+    <section class="hero section" id="top">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span> СИСТЕМА ОБУЧЕНИЯ САППОРТА</div>
+        <h1>От <span>новичка</span><br /><em>до готового специалиста.</em></h1>
+        <p class="hero-lede">
+          Единый маршрут для первых дней в поддержке — доступы, инструменты, рабочие процессы,
+          реальные кейсы и привычки, которые помогают уверенно работать в смене.
+        </p>
+        <div class="hero-actions">
+          <a href="#journey" class="primary-btn">Начать обучение <span>↘</span></a>
+          <button class="text-btn" id="resetBtn">Сбросить прогресс</button>
+        </div>
+
+        <div class="hero-metrics">
+          <div><strong id="heroProgress">0%</strong><span>выполнено</span></div>
+          <div><strong>10</strong><span>основных модулей</span></div>
+          <div><strong>24/7</strong><span>доступ к базе знаний</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal delay-1">
+        <div class="scanlines"></div>
+        <div class="character-card">
+          <div class="character-stage">
+            <div class="character-shadow"></div>
+            <div class="character character-image" id="character">
+              <div class="evolution-gallery" id="evolutionGallery" aria-label="Этапы развития специалиста поддержки">
+                <div class="evo-stage is-current" data-stage="0">
+                  <div class="evo-art"><img src="assets/evolution-01.png" alt="Этап 1"></div>
+                  <div class="evo-caption"><strong>Новичок</strong><span>Первые шаги</span></div>
+                </div>
+                <div class="evo-stage is-locked" data-stage="1">
+                  <div class="evo-art"><img src="assets/evolution-02.png" alt="Этап 2"></div>
+                  <div class="evo-caption"><strong>Стажёр</strong><span>Осваиваешь инструменты</span></div>
+                </div>
+                <div class="evo-stage is-locked" data-stage="2">
+                  <div class="evo-art"><img src="assets/evolution-03.png" alt="Этап 3"></div>
+                  <div class="evo-caption"><strong>Специалист</strong><span>Решаешь сложные кейсы</span></div>
+                </div>
+                <div class="evo-stage is-locked" data-stage="3">
+                  <div class="evo-art"><img src="assets/evolution-04.png" alt="Этап 4"></div>
+                  <div class="evo-caption"><strong>Мастер</strong><span>Помогаешь другим</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="level-badge" id="levelBadge">УРОВЕНЬ 01 · НОВИЧОК</div>
+          </div>
+          <div class="character-caption">
+            <div>
+              <span class="muted">ТЕКУЩИЙ СТАТУС</span>
+              <strong id="statusLabel">Новичок</strong>
+            </div>
+            <div class="mini-stat">
+              <span class="muted">СЛЕДУЮЩИЙ УРОВЕНЬ</span>
+              <strong id="nextUnlock">Основы рабочего места</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-strip" id="journey">
+      <div class="section-number">01</div>
+      <div>
+        <div class="eyebrow">ВАШ ПУТЬ</div>
+        <h2>Изучай работу в том же порядке, в котором ты <span>реально будешь её выполнять.</span></h2>
+      </div>
+      <p>
+        Отмечай практические пункты по мере обучения. Страница сохраняет твой прогресс на этом устройстве,
+        а база знаний всегда доступна, когда появляется новый рабочий запрос.
+      </p>
+    </section>
+
+    <section class="section module-section">
+      <div class="module-head">
+        <div>
+          <div class="eyebrow">МОДУЛЬ 01</div>
+          <h3>Настройка рабочего места</h3>
+        </div>
+        <div class="module-progress" data-module="workspace">0 / 6</div>
+      </div>
+
+      <div class="module-grid">
+        <div class="checklist-card" data-module-card="workspace">
+          <div class="check-row" data-item>
+            <button class="check-circle"></button>
+            <div><strong>Доступ к Telegram</strong><span>Подключись к общему аккаунту поддержки и проверь настройки текущей смены.</span></div>
+          </div>
+          <div class="check-row" data-item>
+            <button class="check-circle"></button>
+            <div><strong>Доступ к Slack</strong><span>Открой каналы поддержки и знай, куда направлять запросы другим отделам.</span></div>
+          </div>
+          <div class="check-row" data-item>
+            <button class="check-circle"></button>
+            <div><strong>2FA / аутентификатор</strong><span>Проверь безопасный вход в аккаунт при необходимости.</span></div>
+          </div>
+          <div class="check-row" data-item>
+            <button class="check-circle"></button>
+            <div><strong>Рабочее пространство Google</strong><span>Открой общие папки, документы и рабочие вкладки.</span></div>
+          </div>
+          <div class="check-row" data-item>
+            <button class="check-circle"></button>
+            <div><strong>Рабочие вкладки</strong><span>Подготовь стандартный набор вкладок, чтобы веб-платформа и справочные страницы были под рукой.</span></div>
+          </div>
+          <div class="check-row" data-item>
+            <button class="check-circle"></button>
+            <div><strong>Основы передачи смены</strong><span>Знай, какую информацию нужно оставить следующему сотруднику поддержки.</span></div>
+          </div>
+        </div>
+
+        <div class="mentor-card">
+          <div class="card-kicker">ЗАМЕТКА МЕНТОРА</div>
+          <h4>Настрой рабочее место один раз.<br />Экономь минуты на каждой смене.</h4>
+          <p>Цель — предсказуемое рабочее место: меньше поиска вкладок, меньше проблем с доступами и меньше отвлечений во время активных запросов.</p>
+          <div class="tag-row"><span>Telegram</span><span>Slack</span><span>Web</span><span>Google</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section module-section">
+      <div class="module-head">
+        <div>
+          <div class="eyebrow">МОДУЛЬ 02</div>
+          <h3>Веб-платформа</h3>
+        </div>
+        <div class="module-progress" data-module="web">0 / 5</div>
+      </div>
+
+      <div class="web-demo">
+        <div class="web-top">
+          <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
+          <span class="web-url">внутренняя система / операции</span>
+        </div>
+        <div class="web-body">
+          <aside class="web-sidebar">
+            <div class="fake-logo">ОПЕРАЦИИ</div>
+            <div class="side-item active">Сделки</div>
+            <div class="side-item">Диспуты</div>
+            <div class="side-item">История</div>
+            <div class="side-item">Партнёры</div>
+          </aside>
+          <div class="web-main">
+            <div class="web-title">Сделки <span class="pill">ОНЛАЙН</span></div>
+            <div class="filter-row">
+              <span class="filter-chip">Валюта</span>
+              <span class="filter-chip">Статус: NEW</span>
+              <span class="filter-chip">Таймер</span>
+              <span class="filter-chip">Трейдер</span>
+            </div>
+            <div class="deal-table">
+              <div class="deal-row head"><span>ID</span><span>Валюта</span><span>Статус</span><span>Таймер</span></div>
+              <div class="deal-row"><span>#A1842</span><span>USD</span><span class="status green">NEW</span><span>08:21</span></div>
+              <div class="deal-row"><span>#A1841</span><span>EUR</span><span class="status green">NEW</span><span>12:05</span></div>
+              <div class="deal-row"><span>#A1838</span><span>GBP</span><span class="status amber">PENDING</span><span>03:44</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-inline" data-module-card="web">
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Найти сделку</strong><span>Найди сделку по ID и проверь правильность записи.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Использовать фильтры</strong><span>Валюта + NEW + нужная очередь.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Следить за таймером</strong><span>Замечать сделки, близкие к завершению таймера.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Проверить статус</strong><span>Понимать, что может изменить поддержка.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Правильно передавать запрос</strong><span>Знать, когда запрос относится к другому отделу.</span></div></div>
+      </div>
+    </section>
+
+    <section class="section module-section telegram-section">
+      <div class="module-head">
+        <div>
+          <div class="eyebrow">МОДУЛЬ 03</div>
+          <h3>Работа с Telegram</h3>
+        </div>
+        <div class="module-progress" data-module="telegram">0 / 5</div>
+      </div>
+
+      <div class="telegram-layout">
+        <div class="chat-window">
+          <div class="chat-header"><span class="chat-avatar">T</span><div><strong>Поддержка трейдеров</strong><span>общий аккаунт · онлайн</span></div><span class="header-eye">◉</span></div>
+          <div class="chat-messages">
+            <div class="message trader with-reaction"><span>Здравствуйте, можете помочь с нашей проблемой?</span><small>14:31</small><span class="telegram-reaction" title="Реакция: просмотрено">👀</span></div>
+            <div class="message operator"><span>Здравствуйте, да, конечно. Работаем для вас 24/7</span><small>14:33</small></div>
+          </div>
+          <div class="chat-input"><span>Ответь…</span><span>↗</span></div>
+        </div>
+
+        <div class="workflow-card">
+          <div class="card-kicker">ЗАПРОС → ДЕЙСТВИЕ</div>
+          <div class="workflow-step"><b>01</b><div><strong>Отметь запрос</strong><span>Поставь стандартную реакцию / отметку о принятии.</span></div></div>
+          <div class="workflow-step"><b>02</b><div><strong>Определи тип</strong><span>Это выплата, сделка, доступ, трафик, курс или эскалация?</span></div></div>
+          <div class="workflow-step"><b>03</b><div><strong>Открой веб-платформу</strong><span>Используй данные запроса, чтобы найти нужную запись.</span></div></div>
+          <div class="workflow-step"><b>04</b><div><strong>Выполни действие</strong><span>Выполни разрешённую операцию.</span></div></div>
+          <div class="workflow-step"><b>05</b><div><strong>Ответь</strong><span>Дай понятный стандартный ответ и двигайся дальше.</span></div></div>
+        </div>
+      </div>
+
+      <div class="checklist-inline" data-module-card="telegram">
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Прочитать весь запрос</strong><span>Не выполняй действие, пока не понятен весь контекст.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Отметить как принятый</strong><span>Используй стандартную визуальную отметку.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Определи тип кейса</strong><span>Пойми процесс до того, как открывать дополнительные инструменты.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Проверить в веб-платформе</strong><span>Проверь фактическое состояние сделки или аккаунта.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Ответить и перейти дальше</strong><span>Поддерживай движение очереди.</span></div></div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="knowledge">
+      <div class="section-number">04</div>
+      <div class="case-head">
+        <div>
+          <div class="eyebrow">БАЗА ЗНАНИЙ</div>
+          <h2>Напиши проблему.<br /><span>Найди инструкцию.</span></h2>
+        </div>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Поиск кейсов, инструментов, действий…" aria-label="Search knowledge base" />
+          <kbd>Ctrl K</kbd>
+        </div>
+      </div>
+
+      <div class="category-row">
+        <button class="category active" data-filter="all">Все</button>
+        <button class="category" data-filter="payout">Выплаты</button>
+        <button class="category" data-filter="deal">Сделки</button>
+        <button class="category" data-filter="access">Доступ</button>
+        <button class="category" data-filter="traffic">Трафик</button>
+        <button class="category" data-filter="escalation">Эскалация</button>
+      </div>
+
+      <div class="case-grid" id="caseGrid">
+        <article class="case-card" data-cat="payout" data-search="payout payouts direct send payments new currency deals directed">
+          <div class="case-icon">↗</div><span class="case-tag">ВЫПЛАТЫ</span>
+          <h4>«Можете направить эту выплату?»</h4>
+          <p>Найди нужную валютную очередь, проверь статус NEW, не дублируй обработку и ответь трейдеру.</p>
+          <button class="case-link" data-case="payout">Открыть инструкцию →</button>
+        </article>
+        <article class="case-card" data-cat="deal" data-search="deal transaction id check trader problem">
+          <div class="case-icon">#</div><span class="case-tag">СДЕЛКИ</span>
+          <h4>«Проверьте, пожалуйста, эту сделку.»</h4>
+          <p>Используй ID, чтобы найти запись, проверь её состояние, определи проблему и выполни разрешённое действие.</p>
+          <button class="case-link" data-case="deal">Открыть инструкцию →</button>
+        </article>
+        <article class="case-card" data-cat="access" data-search="login password forgot access reset">
+          <div class="case-icon">⌘</div><span class="case-tag">ДОСТУП</span>
+          <h4>«Мы забыли логин и пароль.»</h4>
+          <p>Проверь запрос, открой нужный раздел веб-платформы и восстанови доступ по утверждённой процедуре.</p>
+          <button class="case-link" data-case="access">Открыть инструкцию →</button>
+        </article>
+        <article class="case-card" data-cat="traffic" data-search="traffic low volume complaint">
+          <div class="case-icon">〽</div><span class="case-tag">ТРАФИК</span>
+          <h4>«Почему так мало трафика?»</h4>
+          <p>Используй стандартный ответ, не давай необоснованных обещаний и передай запрос дальше, если нужна дополнительная проверка.</p>
+          <button class="case-link" data-case="traffic">Открыть инструкцию →</button>
+        </article>
+        <article class="case-card" data-cat="escalation" data-search="rate exchange course manager department">
+          <div class="case-icon">↗</div><span class="case-tag">ПЕРЕДАЧА</span>
+          <h4>«Нас не устраивает курс.»</h4>
+          <p>Определи, что запрос относится к отделу корректировки, и передай контекст, не теряя исходный диалог.</p>
+          <button class="case-link" data-case="escalation">Открыть инструкцию →</button>
+        </article>
+        <article class="case-card" data-cat="deal" data-search="transactions history volume withdraw confirm">
+          <div class="case-icon">∑</div><span class="case-tag">СДЕЛКИ</span>
+          <h4>«Вот история моих транзакций.»</h4>
+          <p>Посчитай обработанный объём, сверь транзакции и убедись, что вывод можно безопасно подтвердить.</p>
+          <button class="case-link" data-case="history">Открыть инструкцию →</button>
+        </article>
+      </div>
+      <div class="empty-state" id="emptyState">Подходящих инструкций не найдено.</div>
+    </section>
+
+    <section class="section module-section">
+      <div class="module-head">
+        <div><div class="eyebrow">МОДУЛЬ 05</div><h3>Slack и эскалации</h3></div>
+        <div class="module-progress" data-module="slack">0 / 4</div>
+      </div>
+      <div class="slack-grid">
+        <div class="slack-card">
+          <div class="slack-mark">S</div><div class="slack-title">Куда движется задача дальше</div>
+          <p>Поддержка принимает первый запрос. В рабочем чате передаются межотдельные задачи и контекст ответственным коллегам.</p>
+        </div>
+        <div class="route-card"><span>САППОРТ</span><b>→</b><span>ТЕХНИЧЕСКИЙ ОТДЕЛ</span></div>
+        <div class="route-card"><span>САППОРТ</span><b>→</b><span>ФИНАНСЫ</span></div>
+        <div class="route-card"><span>САППОРТ</span><b>→</b><span>МЕНЕДЖЕР</span></div>
+      </div>
+      <div class="checklist-inline" data-module-card="slack">
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Знай каналы</strong><span>Находи правильное место для каждого запроса.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Передавай контекст</strong><span>Добавляй ID, факты и уже выполненные действия.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Передавай ответственность</strong><span>Знай, какой отдел должен действовать дальше.</span></div></div>
+        <div class="check-row compact" data-item><button class="check-circle"></button><div><strong>Закрывай вопрос</strong><span>Возвращайся в исходный диалог Telegram, когда это необходимо.</span></div></div>
+      </div>
+    </section>
+
+    <section class="section module-section">
+      <div class="module-head">
+        <div><div class="eyebrow">МОДУЛЬ 06</div><h3>Дисциплина смены</h3></div>
+        <div class="module-progress" data-module="discipline">0 / 4</div>
+      </div>
+      <div class="discipline-grid" data-module-card="discipline">
+        <div class="big-note"><span>01</span><h4>Не позволяй очереди<br /><em>управлять тобой.</em></h4><p>Обрабатывай запросы по понятному и повторяемому порядку. Быстро — хорошо, хаотично — дорого.</p></div>
+        <div class="discipline-item" data-item><button class="check-circle"></button><div><strong>Объединяй похожие задачи</strong><span>Сокращай переключения между чатами и инструментами.</span></div></div>
+        <div class="discipline-item" data-item><button class="check-circle"></button><div><strong>Следи за таймерами</strong><span>Следи за сделками, которые приближаются к завершению таймера.</span></div></div>
+        <div class="discipline-item" data-item><button class="check-circle"></button><div><strong>Оставляй заметки для следующей смены</strong><span>Помогай следующему сотруднику быстро продолжить работу.</span></div></div>
+        <div class="discipline-item" data-item><button class="check-circle"></button><div><strong>Передавай вовремя</strong><span>Не трать двадцать минут на решение задачи, которая относится к другому отделу.</span></div></div>
+      </div>
+    </section>
+
+    <section class="section final-section" id="final">
+      <div class="final-inner">
+        <div class="eyebrow">ФИНАЛЬНАЯ ПРОВЕРКА</div>
+        <h2 id="finalTitle">Ты пока не<br /><span>готов.</span></h2>
+        <p id="finalText">Пройди практические модули. Цель — уверенная работа, а не механическое заучивание.</p>
+        <div class="final-progress"><div id="finalBar"></div></div>
+        <div class="final-row">
+          <div><strong id="finalPercent">0%</strong><span>обучение завершено</span></div>
+          <div><strong id="finalModules">0 / 6</strong><span>модулей выполнено</span></div>
+          <button class="primary-btn" id="completeBtn">Проверить готовность ↗</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="caseModal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose">×</button>
+      <div class="eyebrow" id="modalTag">ИНСТРУКЦИЯ</div>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>ПОДДЕРЖКА / ОНБОРДИНГ — демонстрационная версия</span>
+    <span>Создано для внутреннего обучения</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
